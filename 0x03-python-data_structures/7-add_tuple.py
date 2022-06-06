@@ -7,7 +7,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
         a0 = 0
         a1 = 0
     elif size_a == 1:
-        a0 = size_a[0]
+        a0 = tuple_a[0]
         a1 = 0
     else:
         a0 = tuple_a[0]
@@ -17,7 +17,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
         b0 = 0
         b1 = 0
     elif size_b == 1:
-        b0 = size_b[0]
+        b0 = tuple_b[0]
         b1 = 0
     else:
         b0 = tuple_b[0]
