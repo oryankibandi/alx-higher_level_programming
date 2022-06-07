@@ -5,4 +5,4 @@ if __name__ == '__main__':
     res = 0
     for arg in range(1, length):
         res += int(sys.argv[arg])
-    print(res)
+    print("{:d}".format(res))
