@@ -5,5 +5,5 @@ def print_sorted_dictionary(a_dictionary):
     key_list.sort()
 
     for i in key_list:
-        print("{}: ".format(i),end="")
+        print("{}: ".format(i), end="")
         print(a_dictionary[i])
