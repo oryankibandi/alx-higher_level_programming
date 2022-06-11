@@ -12,7 +12,10 @@ def roman_to_int(roman_string):
         if rom_val[i] <= dummy_val:
             int_val += rom_val[i]
         else:
-            int_val = rom_val[i] - (dummy_val * 2)
+            if dummy_val > 1:
+                int_val = rom_val[i] - (dummy_val * 2)
+            else:
+                int_val = rom_val[i] - (dummy_val)
         dummy_val = rom_val[i]
 
     return (int_val)
