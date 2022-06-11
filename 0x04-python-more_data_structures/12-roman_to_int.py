@@ -9,7 +9,7 @@ def roman_to_int(roman_string):
     dummy_val = 0
 
     for i in roman_string:
-        if rom_val[i] <= int_val:
+        if rom_val[i] <= dummy_val:
             int_val += rom_val[i]
         else:
             int_val = rom_val[i] - (dummy_val * 2)
