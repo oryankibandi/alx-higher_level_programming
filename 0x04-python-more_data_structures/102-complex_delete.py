@@ -2,8 +2,10 @@
 def complex_delete(a_dictionary, value):
     new_dict = a_dictionary.copy()
 
-    for key, val in new_dict.items():
-        if value == val:
-            new_dict.pop(key)
+    keys = list(new_dict.keys())
 
-    return new_dict
+    for i in keys:
+        if new_dict[i] == value:
+            a_dictionary.pop(i)
+
+    return (a_dictionary)
