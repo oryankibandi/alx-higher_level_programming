@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-for digit in range(0, 99):
-    if digit % 10 > num / 10:
-        if digit != 89:
-                print("{:02d}, ".format(digit), end='')
-        else:
-                print("{:02d}".format(digit))
+for i in range(10):
+    for j in range(i + 1, 10):
+        print(
+            "{}{}".format(i, j),
+            end=", " if int(str(i) + str(j)) < 89 else "\n"
+            )
