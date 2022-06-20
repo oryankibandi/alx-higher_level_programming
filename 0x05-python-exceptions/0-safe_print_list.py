@@ -6,12 +6,12 @@ def safe_print_list(my_list=[], x=0):
         if i > x:
             break
         try:
+            i += 1
             if i < x:
                 print(item, end='')
-                i += 1
             elif i == x:
                 print(item)
-                i += 1
+                break
         except (RuntimeError, TypeError, NameError) as err:
             print(f"Unexpected {err=}, {type(err)=}")
 
