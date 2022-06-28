@@ -69,7 +69,12 @@ class Rectangle:
 
     def _str__(self):
         """prints the rectangle"""
-        for h in self._height:
-            for w in self._width:
-                print("#")
-            print()
+        return_string = ""
+        if (self._width == 0) or (self._height == 0):
+            return ("")
+        for h in range(self.__height):
+            for w in range(self.__width):
+                return_string += "#"
+            if h != self.__height - 1:
+                return_string += "\n"
+        return (return_string)
