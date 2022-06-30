@@ -26,11 +26,9 @@ def text_indentation(text):
         else:
             if del_space:
                 if i == ' ':
-                    del_space = False    
+                    del_space = False
                 else:
                     print(i, end='')
                     del_space = False
             else:
                 print(i, end='')
-
-

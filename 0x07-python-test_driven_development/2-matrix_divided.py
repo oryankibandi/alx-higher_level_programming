@@ -39,5 +39,6 @@ def matrix_divided(matrix, div):
 
         mat_len = len(items)
 
-    new_matrix = list(map(lambda x: list(map(lambda y: round(y / div, 2), x)), matrix))
+    lam = map(lambda x: list(map(lambda y: round(y / div, 2), x)), matrix)
+    new_matrix = list(lam)
     return (new_matrix)
