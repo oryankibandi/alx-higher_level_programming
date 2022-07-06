@@ -3,6 +3,7 @@
 this module creates a Sudent class
 """
 
+
 class Student:
     """
     Student class
@@ -33,6 +34,6 @@ class Student:
         if is_str:
             for i in attr:
                 new_att[i] = att_copy[i]
-            return (new_att);
+            return (new_att)
         else:
             return (att_copy)
