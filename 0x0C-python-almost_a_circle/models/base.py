@@ -63,11 +63,10 @@ class Base:
             json_string:  a string representing a list of dictionaries
         """
         js_list = []
-        if json_string is Not None and json_string != '':
-            if type(json_string) != str:
-                raise TypeError("json_string must be a string")
-            js_list = json.loads(json_string)
-        return js_list
+        if json_string is None or len(json_string) == 0:
+            return []
+        else:
+            return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
