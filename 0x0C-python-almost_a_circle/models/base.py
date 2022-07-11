@@ -96,3 +96,47 @@ class Base:
                 for d in list_dicts:
                     lt.append(cls.create(**d))
         return lt
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        Serializes CSV
+
+        Args:
+            list_objs: list of instances
+        """
+        filename = cls.__name__ + ".csv"
+        with open(filename, 'w') as f:
+            if list_objs is not None:
+                list_objs = [x.to_dictionary() for x in list_objs]
+                if cls.__name__ == 'Rectangle':
+                    fields = ['id', 'width', 'height', 'x', 'y']
+                elif cls.__name__ == 'Square':
+                    fields = ['id', 'size', 'x', 'y']
+                writer = csv.DictWriter(f, fieldnames=fields)
+                writer.writeheader()
+                writer.writerows(list_objs)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Deserializes csv
+        """
+
+        filename = cls.__name__ + ".csv"
+        des_csv = []
+        if os.path.exists(filename):
+            with open(filename, 'r') as f:
+                reader = csv.reader(f, delimiter=',')
+                if cls.__name__ == 'Rectangle':
+                    fields = ['id', 'width', 'height', 'x', 'y']
+                elif cls.__name__ == 'Square':
+                    fields = ['id', 'size', 'x', 'y']
+                for x, row in enumerate(reader):
+                    if x > 0:
+                        i = cls(1, 1)
+                        for j, e in enumerate(row):
+                            if e:
+                                setattr(i, fields[j], int(e))
+                        des_csv.append(i)
+        return des_csv
