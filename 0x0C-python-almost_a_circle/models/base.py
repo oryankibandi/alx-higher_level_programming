@@ -6,6 +6,7 @@ This module is the base class for all our other classes
 
 import json
 
+
 class Base:
     """
     class Base
@@ -20,7 +21,7 @@ class Base:
         """
         if id is None:
             self.__nb__objects += 1
-            self.id =self.__nb__objects
+            self.id = self.__nb__objects
         else:
             self.id = id
 
@@ -35,7 +36,7 @@ class Base:
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return ("[]")
         return (json.dumps(list_dictionaries))
-    
+
     @classmethod
     def save_to_file(cls, list_objs):
         """
@@ -87,12 +88,12 @@ class Base:
         """Returns a list of instances."""
 
         filename = cls.__name__ + ".json"
-        l = []
+        lt = []
         list_dicts = []
         if os.path.exists(filename):
             with open(filename, 'r') as f:
                 s = f.read()
                 list_dicts = cls.from_json_string(s)
                 for d in list_dicts:
-                    l.append(cls.create(**d))
-        return l
+                    lt.append(cls.create(**d))
+        return lt

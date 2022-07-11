@@ -6,6 +6,7 @@ This module contains the Rectangle class which inherits from Base
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """
     The Rectangle class
@@ -25,7 +26,6 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
         super().__init__(id)
-
 
     @property
     def width(self):
@@ -51,7 +51,7 @@ class Rectangle(Base):
         returns the attribute
         """
         return (self.__height)
-       
+
     @height.setter
     def height(self, value):
         """
@@ -122,7 +122,9 @@ class Rectangle(Base):
         """
         overrides the __str__ method
         """
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height))
+        string = "[Rectangle] ({}) {}/{} - {}/{}".format(
+                self.id, self.__x, self.__y, self.__width, self.__height)
+        return (string)
 
     def update(self, *args, **kwargs):
         """
@@ -131,7 +133,7 @@ class Rectangle(Base):
         Args:
             args []: List of arguments
         """
-        if args in not None && len(args) != 0:
+        if args in not None and len(args) != 0:
             att_num = 1
             for att in args:
                 if att_num == 1:
@@ -164,5 +166,6 @@ class Rectangle(Base):
         """
         returns a dictionary represnetation
         """
-        new_dict = {"x": self.__x, "y": self.__y, "id": self.id, "height": self.__height, "width": self.__width}
+        new_dict = {"x": self.__x, "y": self.__y, "id": self.id,
+                    "height": self.__height, "width": self.__width}
         return (new_dict)

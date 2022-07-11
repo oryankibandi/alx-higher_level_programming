@@ -5,6 +5,7 @@ This module ontains the Square class that inherits from Retangle
 
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """
     Square class
@@ -25,7 +26,8 @@ class Square(Rectangle):
         """
         returns string representation of the instance
         """
-        return ("[Square] ({}) {}/{} - {}".format(self.id, self.__x, self.__y, self.size))
+        return ("[Square] ({}) {}/{} - {}".format(
+                self.id, self.__x, self.__y, self.size))
 
     @property
     def size(self):
@@ -79,5 +81,6 @@ class Square(Rectangle):
         """
         returs a new dictionary representation
         """
-        new_dict = {"id": self.id, "x": self.__x, "size": self.size, "y": self.__y}
+        new_dict = {"id": self.id, "x": self.__x,
+                    "size": self.size, "y": self.__y}
         return (new_dict)
