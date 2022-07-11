@@ -20,6 +20,7 @@ class Square(Rectangle):
             y (int): y
             id (int): id
         """
+        self.size = size
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
@@ -27,7 +28,7 @@ class Square(Rectangle):
         returns string representation of the instance
         """
         return ("[Square] ({}) {}/{} - {}".format(
-                self.id, self.__x, self.__y, self.size))
+                self.id, self.x, self.y, self.size))
 
     @property
     def size(self):

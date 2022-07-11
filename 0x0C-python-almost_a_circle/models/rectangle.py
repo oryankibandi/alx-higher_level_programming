@@ -133,7 +133,7 @@ class Rectangle(Base):
         Args:
             args []: List of arguments
         """
-        if args in not None and len(args) != 0:
+        if args is not None and len(args) != 0:
             att_num = 1
             for att in args:
                 if att_num == 1:
