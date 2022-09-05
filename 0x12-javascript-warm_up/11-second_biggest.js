@@ -1,15 +1,8 @@
 #!/usr/bin/node
 
-let big = 0;
-let secBig = 0;
-
-for (let i = 2; i < process.argv.length; i++) {
-  if (parseInt(process.argv[i]) > big) {
-    big = parseInt(process.argv[i]);
-  }
-  if (parseInt(process.argv[i]) > secBig && parseInt(process.argv[i]) < big) {
-    secBig = parseInt(process.argv[i]);
-  }
+if (process.argv.length < 4) {
+  console.log(0);
+} else {
+  const list = process.argv.slice(2).sort(function (a, b) { return b - a; });
+  console.log(list[1]);
 }
-
-console.log(secBig);
