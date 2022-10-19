@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const request = require('request');
+const request = require("request");
 
 const id = process.argv[2];
 const url = `https://swapi-api.hbtn.io/api/films/${id}`;
@@ -10,9 +10,7 @@ const getCharacterNames = async (urls) => {
 
   for (let i = 0; i < len; i++) {
     try {
-      console.log('i:', i);
       request(urls[i], (err, res, body) => {
-        console.log('querying: ', urls[i]);
         console.log(JSON.parse(body).name);
       });
     } catch (error) {
